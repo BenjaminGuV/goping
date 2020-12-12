@@ -27,6 +27,9 @@ $ GOOS=windows GOARCH=386 \
   go build -ldflags -H=windowsgui
 ```
 
+#Ejemplo
+
+![alt text](http://drive.google.com/uc?export=view&id=17rU4wYyrQ_iJRdWyQTvPrcnC-d1OfmkA "Ejemplo")
 
 
 License

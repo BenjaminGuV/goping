@@ -9,6 +9,7 @@ import (
 	"bufio"
 	"log"
 	"runtime"
+	"syscall"
 
 	"github.com/getlantern/systray"
 	"github.com/gen2brain/beeep"
@@ -73,7 +74,9 @@ func sendPing()  {
 
 	if runtime.GOOS == "windows" {
         cmd = exec.Command("ping", "1.1.1.1", "-t")
-    }
+	}
+	
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	
 	stdoutIn, _ := cmd.StdoutPipe()
 	stderrIn, _ := cmd.StderrPipe()
